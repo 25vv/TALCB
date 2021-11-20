@@ -1,0 +1,76 @@
+name: Bot-Test
+on: [push]
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - name: Context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+        
+      - name: GIT Initialization
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      
+      - name: Setting Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+          architecture: 'x64'
+          
+      - name: Decode Test Files
+        env:
+          G_API: ${{ secrets.G_API }}
+        run: python deco.py
+         
+      - name: Dependencies
+        run: |
+          pip install --user python-dotenv requests telethon cryptg hachoir aiohttp cchardet aiodns
+       
+      - name: Setup FFMPEG For Video Tasks
+        uses: FedericoCarboni/setup-ffmpeg@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Start Test 01
+        run: python AutoWaifu.py --T01
+        
+      - name: Start Test 02
+        run: python AutoWaifu.py --T02
+        
+      - name: Start Test 03
+        run: python AutoWaifu.py --T03
+        
+      - name: Start Test 04
+        run: python AutoWaifu.py --T04
+        
+      - name: Start Test 05
+        run: python AutoWaifu.py --T05
+        
+      - name: Start Test 06
+        run: python AutoWaifu.py --T06
+        
+      - name: Start Test 07
+        run: python AutoWaifu.py --T07
+        
+      - name: Start Test 08
+        run: python AutoWaifu.py --T08
+        
+      - name: Start Test 09
+        run: python AutoWaifu.py --T09
+        
+      - name: Start Test 10
+        run: python AutoWaifu.py --T10
+        
+      - name: Start Test 11
+        run: python AutoWaifu.py --T11
+        
+      - name: Start Test 12
+        run: python AutoWaifu.py --T12
+        
+        
