@@ -38,39 +38,39 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Start Test 01
-        run: python AutoWaifu.py --T01
+        run: python AutoWaifu.py
         
       - name: Start Test 02
-        run: python AutoWaifu.py --T02
+        run: python AutoWaifu.py
         
       - name: Start Test 03
-        run: python AutoWaifu.py --T03
+        run: python AutoWaifu.py
         
       - name: Start Test 04
-        run: python AutoWaifu.py --T04
+        run: python AutoWaifu.py
         
       - name: Start Test 05
-        run: python AutoWaifu.py --T05
+        run: python AutoWaifu.py
         
       - name: Start Test 06
-        run: python AutoWaifu.py --T06
+        run: python AutoWaifu.py
         
       - name: Start Test 07
-        run: python AutoWaifu.py --T07
+        run: python AutoWaifu.py
         
       - name: Start Test 08
-        run: python AutoWaifu.py --T08
+        run: python AutoWaifu.py
         
       - name: Start Test 09
-        run: python AutoWaifu.py --T09
+        run: python AutoWaifu.py
         
       - name: Start Test 10
-        run: python AutoWaifu.py --T10
+        run: python AutoWaifu.py
         
       - name: Start Test 11
-        run: python AutoWaifu.py --T11
+        run: python AutoWaifu.py
         
       - name: Start Test 12
-        run: python AutoWaifu.py --T12
+        run: python AutoWaifu.py
         
         
