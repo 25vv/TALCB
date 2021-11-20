@@ -31,11 +31,6 @@ jobs:
       - name: Dependencies
         run: |
           pip install --user python-dotenv requests telethon cryptg hachoir aiohttp cchardet aiodns
-       
-      - name: Setup FFMPEG For Video Tasks
-        uses: FedericoCarboni/setup-ffmpeg@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Start Test 01
         run: python AutoWaifu.py
