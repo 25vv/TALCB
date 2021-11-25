@@ -30,7 +30,7 @@ jobs:
          
       - name: Dependencies
         run: |
-          pip --user install webview
+          pip install --user webview
         
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
