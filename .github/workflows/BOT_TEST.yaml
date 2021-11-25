@@ -5,7 +5,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [windows-latest]
     steps:
       - name: Context
         env:
@@ -17,10 +17,10 @@ jobs:
         with:
           fetch-depth: 1
       
-      - name: Setting Python 3.6
+      - name: Setting Python 3.8
         uses: actions/setup-python@v2
         with:
-          python-version: '3.6'
+          python-version: '3.8'
           architecture: 'x64'
           
       - name: Decode Test Files
@@ -30,42 +30,13 @@ jobs:
          
       - name: Dependencies
         run: |
-          pip install --user python-dotenv requests telethon cryptg hachoir aiohttp cchardet aiodns
+          pip wheel webview
         
-      - name: Start Test 01
-        run: python AutoWaifu.py
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          path: "*.whl"
         
-      - name: Start Test 02
-        run: python AutoWaifu.py
-        
-      - name: Start Test 03
-        run: python AutoWaifu.py
-        
-      - name: Start Test 04
-        run: python AutoWaifu.py
-        
-      - name: Start Test 05
-        run: python AutoWaifu.py
-        
-      - name: Start Test 06
-        run: python AutoWaifu.py
-        
-      - name: Start Test 07
-        run: python AutoWaifu.py
-        
-      - name: Start Test 08
-        run: python AutoWaifu.py
-        
-      - name: Start Test 09
-        run: python AutoWaifu.py
-        
-      - name: Start Test 10
-        run: python AutoWaifu.py
-        
-      - name: Start Test 11
-        run: python AutoWaifu.py
-        
-      - name: Start Test 12
-        run: python AutoWaifu.py
+      
         
         
